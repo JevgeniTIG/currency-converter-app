@@ -1,0 +1,11 @@
+@import 'src/shared-styles.scss';
+
+mat-toolbar {
+  background: #000000;
+}
+
+.nav-title {
+  margin-left: 30vw;
+  font-size: $project-font-size-title;
+  color: #FFFFFF;
+}

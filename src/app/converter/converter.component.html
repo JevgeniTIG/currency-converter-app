@@ -1,0 +1,46 @@
+
+<form [formGroup]="converterForm" class="converterForm">
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Amount from</mat-label>
+    <input matInput formControlName="fromAmount">
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Currency</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+        {{currency.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <div class="svg-wrapper">
+    <img class="change-svg" src="assets/change_svg.svg">
+  </div>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Amount to</mat-label>
+    <input matInput formControlName="toAmount">
+  </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Currency</mat-label>
+    <mat-select>
+
+      <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+        {{currency.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+</form>
+
+
+<button (click)="getRate()">GET RATE</button>
