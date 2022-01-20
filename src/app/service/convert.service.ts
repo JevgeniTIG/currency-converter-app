@@ -1,10 +1,11 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {conf} from "../conf/conf";
 
 
 const CURRENCY_CONVERTER_API = 'https://free.currconv.com/api/v7/convert';
-const API_KEY = 'a1ded7651fc3e61f17b2';
+const API_KEY = conf.key;
 
 @Injectable({
   providedIn: 'root'
