@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 
 
 const CURRENCY_CONVERTER_API = 'https://free.currconv.com/api/v7/convert';
-const API_KEY = 'c2d090b97cc275365a48';
+const API_KEY = 'a1ded7651fc3e61f17b2';
 
 @Injectable({
   providedIn: 'root'
