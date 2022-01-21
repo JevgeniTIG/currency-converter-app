@@ -1,5 +1,3 @@
-@import 'src/shared-styles';
-
 
 mat-form-field {
   width: 12vw;
@@ -16,6 +14,7 @@ mat-form-field {
 }
 .change-svg,  {
   width: 2rem;
+  cursor: pointer;
 }
 
 .converterForm {

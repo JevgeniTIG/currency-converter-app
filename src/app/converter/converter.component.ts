@@ -1,12 +1,7 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {ConvertService} from "../service/convert.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-
-interface Currency {
-
-  value: string;
-}
-
+import {Currency} from "../models/Currency";
 
 @Component({
   selector: 'converter-app',
@@ -63,11 +58,14 @@ export class ConverterComponent implements OnInit, OnChanges {
 
   convert() {
 
-    const currencyPair = this.selectedFromCurrency + '_' + this.selectedToCurrency;
-    this.convertService.getExchangeRate(currencyPair).subscribe(data => {
-      this.exchangeRate = data[currencyPair];
-      this.result = (this.exchangeRate * this.converterForm.value.fromAmount).toFixed(2);
-    })
+    if (this.selectedFromCurrency != "" && this.selectedToCurrency != "") {
+
+      const currencyPair = this.selectedFromCurrency + '_' + this.selectedToCurrency;
+      this.convertService.getExchangeRate(currencyPair).subscribe(data => {
+        this.exchangeRate = data[currencyPair];
+        this.result = (this.exchangeRate * this.converterForm.value.fromAmount).toFixed(2);
+      })
+    }
 
   }
 
